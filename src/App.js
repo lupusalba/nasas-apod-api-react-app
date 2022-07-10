@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 
+// Add background color change on new date, based on avreage color of new image
+// add date change based on input date
 
 // API KEY = bFNqkMyCnMATKhSuyIfHmmhqUNF7gVnJNwo2Loha
 // https://api.nasa.gov/planetary/apod?api_key=bFNqkMyCnMATKhSuyIfHmmhqUNF7gVnJNwo2Loha
@@ -82,10 +84,9 @@ function App() {
     let position = document.getElementById("change")
     setShowInfo(prev => !prev)
     if(showInfo === false) {
-      position.style.visibility = "hidden"
-      console.log(position)
+      position.style.opacity = "0"
     } else {
-      position.style.visibility = "visible"
+      position.style.opacity = "1"
     }
   }
 
@@ -102,6 +103,8 @@ return (
 
       <div className="header">
         <h1 className="siteTitle">Nasa's apod api app</h1>
+        <button id="btn-toggle" onClick={toggleInfo}>Show info</button>
+
         {/* <form>
           
           <input
@@ -116,7 +119,7 @@ return (
         
       </div>
 
-      <button onClick={toggleInfo}>Show info</button>
+      
 
       <div id="change" className=" descriptionInfo">
         <div className="imageTitle">{apodData.title}</div>

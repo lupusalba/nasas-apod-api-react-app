@@ -22,7 +22,6 @@
 .header,
 .descriptionInfo {
   position: absolute;
-  border: 1px solid #ccc;
   width: 80%;
   margin-left: 10%;
 }
@@ -45,5 +44,27 @@
   bottom: 30px;
   background-color: rgba(0, 0, 0, 0.288);
   color: #ccc;
+  transition: all 1s ease;
+}
+
+#btn-toggle {
+  width: 200px;
+  border-radius: 100px;
+  border: 1px solid #fff;
+  background-color: #fff;
+  color: #000;
+}
+
+#btn-toggle:active {
+  border-top: 1px solid #000;
+  border-left: 1px solid #000;
+  transition: all 0.3s ease;
+}
+
+#btn-toggle:hover {
+  border-top: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  transition: all 0.3s ease;
 }
 
