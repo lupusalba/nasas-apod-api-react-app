@@ -5,6 +5,10 @@
   width: 100%;
 }
 
+.App {
+  background-color: #023047;
+}
+
 .main {
   position: relative;
   background-size: contain;
@@ -13,6 +17,7 @@
   height: 100vh;
   width: 100vw;
 }
+
 
 .header,
 .descriptionInfo {
@@ -34,13 +39,11 @@
   margin-right: 20px;
 }
 
-#datePicker {
-  width: 200px;
-  height: 30px;
 
-}
 
 .descriptionInfo {
   bottom: 30px;
+  background-color: rgba(0, 0, 0, 0.288);
+  color: #ccc;
 }
 
