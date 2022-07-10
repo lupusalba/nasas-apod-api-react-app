@@ -21,11 +21,11 @@ function App() {
     key: "bFNqkMyCnMATKhSuyIfHmmhqUNF7gVnJNwo2Loha"
   }
 
- 
+
   const [apodData, setApodData] = useState({})
 
-  
-  
+
+
   const currentDate = new Date().toISOString().slice(0, 10);
   console.log(currentDate)
 
@@ -45,7 +45,7 @@ function App() {
   useEffect((inputDate) => {
     const getImage = (inputDate) => {
       let url = api.base + api.key
-      try { 
+      try {
         //console.log(`"https://api.nasa.gov/planetary/apod?api_key=bFNqkMyCnMATKhSuyIfHmmhqUNF7gVnJNwo2Loha"`)               
         fetch(`${url}`)//yyyy-mm-dd
           .then(response => response.json())
@@ -58,54 +58,36 @@ function App() {
       }
     }
     getImage()
-
   }, [])
 
-  
-  // let src = "https://apod.nasa.gov/apod/image/2207/CatsEye_HubbleVillaVerde_960.jpg"
-  // const getAverageRgb = (src) => {
-  //   console.log("src: " + src)
-  //   const context = document.createElement("canvas").getContext("2d");
-  //   if(typeof src === "string"){
-  //     const img = new Image()
-  //     img.setAttribute("crossOrigin", "")
-  //     img.src = apodData.hdurl
-  //     img.onload = () => {
-  //       context.imageSmoothingEnabled = true
-  //       context.drawImage(img, 0,0,1,1)
-  //       console.log(context.getImageData(1,1,1,1).data.slice(0,3))
-  //     }
-  //   }
-  // }
-  // getAverageRgb(src)
-  
+
 
   const toggleInfo = () => {
     let position = document.getElementById("change")
     setShowInfo(prev => !prev)
-    if(showInfo === false) {
+    if (showInfo === false) {
       position.style.opacity = "0"
     } else {
       position.style.opacity = "1"
     }
   }
 
-const background = {
-  backgroundImage: 'url(' + apodData.hdurl + ')'
+  const background = {
+    backgroundImage: 'url(' + apodData.hdurl + ')'
 
-}
+  }
 
 
-return (
-  <div className="App" >
+  return (
+    <div id="App" className="App" >
 
-    <div className="main" style={background} >
+      <div className="main" style={background} >
 
-      <div className="header">
-        <h1 className="siteTitle">Nasa's apod api app</h1>
-        <button id="btn-toggle" onClick={toggleInfo}>Show info</button>
+        <div className="header">
+          <h1 className="siteTitle">Nasa's apod api app</h1>
+          <button id="btn-toggle" onClick={toggleInfo}>Show info</button>
 
-        {/* <form>
+          {/* <form>
           
           <input
             type="date"
@@ -116,32 +98,32 @@ return (
           />
         </form> */}
 
-        
+
+        </div>
+
+
+
+        <div id="change" className=" descriptionInfo">
+          <div className="imageTitle">{apodData.title}</div>
+          <div className="imageDate">{apodData.date}</div>
+          <div className="imageAuthor">{apodData.copyright}</div>
+          <div className="imageDescription">{apodData.explanation}</div>
+        </div>
+
+
+
+
+
+
+
+
+
+
       </div>
-
-      
-
-      <div id="change" className=" descriptionInfo">
-        <div className="imageTitle">{apodData.title}</div>
-        <div className="imageDate">{apodData.date}</div>
-        <div className="imageAuthor">{apodData.copyright}</div>
-        <div className="imageDescription">{apodData.explanation}</div>
-      </div>
-
-
-
-
-
-
-
-
 
 
     </div>
-
-
-  </div>
-);
+  );
 }
 
 export default App;
