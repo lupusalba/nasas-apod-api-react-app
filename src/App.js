@@ -66,9 +66,9 @@ function App() {
     let position = document.getElementById("change")
     setShowInfo(prev => !prev)
     if (showInfo === false) {
-      position.style.opacity = "0"
-    } else {
       position.style.opacity = "1"
+    } else {
+      position.style.opacity = "0"
     }
   }
 
@@ -85,7 +85,7 @@ function App() {
 
         <div className="header">
           <h1 className="siteTitle">Nasa's apod api app</h1>
-          <button id="btn-toggle" onClick={toggleInfo}>Show info</button>
+          <button id="btn-toggle" onClick={toggleInfo}>Show / Hide Info</button>
 
           {/* <form>
           

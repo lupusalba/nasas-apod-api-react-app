@@ -45,6 +45,7 @@
   background-color: rgba(0, 0, 0, 0.288);
   color: #ccc;
   transition: all 1s ease;
+  opacity: 0;
 }
 
 #btn-toggle {
